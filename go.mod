@@ -1,3 +1,3 @@
-module github.com/cthach/tornet
+module github.com/cthach/tor
 
 go 1.14

@@ -1,4 +1,4 @@
-package tornet
+package tor
 
 import (
 	"context"
