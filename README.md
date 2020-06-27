@@ -16,7 +16,7 @@ and is subject to change. No releases have been made so far.
 TODO: GoDoc
 
 ```
-// IsExit returns nil if the IPv4 address belongs to an exit node.
+// IsExit returns true if the IPv4 address belongs to an exit node.
 IsExit(ctx context.Context, ip string) (bool, error)
 ```
 

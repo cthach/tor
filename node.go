@@ -11,7 +11,7 @@ const dnsExitListHost = "dnsel.torproject.org"
 
 var answerExitNet = &net.IPNet{IP: net.IP{127, 0, 0, 0}, Mask: net.CIDRMask(24, 32)}
 
-// IsExit returns nil if the IPv4 address belongs to an exit node.
+// IsExit returns true if the IPv4 address belongs to an exit node.
 func IsExit(ctx context.Context, ip string) (bool, error) {
 	if !isIPv4(ip) {
 		return false, fmt.Errorf("%s is not a valid IPv4 address", ip)
