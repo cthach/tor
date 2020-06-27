@@ -21,24 +21,24 @@ func TestIsIP(t *testing.T) {
 	}
 
 	for _, test := range tests {
-		if got := tor.IsIP(test.input); got != test.want {
+		if got := tor.IsIPv4(test.input); got != test.want {
 			t.Errorf("isIP(%s)", test.input)
 		}
 	}
 }
 
-func TestReverse(t *testing.T) {
+func TestReverseIP(t *testing.T) {
 	var tests = []struct {
 		input string
 		want  string
 	}{
-		{"", ""},
-		{"hello", "olleh"},
+		{"0.0.0.0", "0.0.0.0"},
+		{"1.2.3.4", "4.3.2.1"},
 	}
 
 	for _, test := range tests {
-		if got := tor.Reverse(test.input); got != test.want {
-			t.Errorf("reverse(%s) = %s", test.input, got)
+		if got := tor.ReverseIP(test.input); got != test.want {
+			t.Errorf("reverseIP(%s) = %s", test.input, got)
 		}
 	}
 }

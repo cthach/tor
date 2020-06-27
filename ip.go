@@ -2,25 +2,30 @@ package tor
 
 import "net"
 
-// isIP returns true if the string is a well-formed IP address.
-func isIP(addr string) bool {
-	if ip := net.ParseIP(addr); ip.To4() == nil && ip.To16() == nil {
+// isIPv4 returns true if the string is a well-formed IPv4 address.
+func isIPv4(addr string) bool {
+	if ip := net.ParseIP(addr); ip.To4() == nil {
 		return false
 	}
 	return true
 }
 
-// reverse returns the reverse string.
-func reverse(s string) string {
-	runes := []rune(s)
-
-	if len(runes) == 0 {
+// reverseIP returns an IP address with reversed octets.
+func reverseIP(addr string) string {
+	ip := net.ParseIP(addr)
+	if ip == nil {
 		return ""
 	}
 
-	for i, j := 0, len(runes)-1; i != j; i, j = i+1, j-1 {
-		runes[i], runes[j] = runes[j], runes[i]
+	if ip.IsUnspecified() {
+		return ip.String()
 	}
 
-	return string(runes)
+	bytes := []byte(ip.To4())
+
+	for i, j := 0, len(bytes)-1; i < j; i, j = i+1, j-1 {
+		bytes[i], bytes[j] = bytes[j], bytes[i]
+	}
+
+	return net.IP(bytes).String()
 }

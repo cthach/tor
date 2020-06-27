@@ -9,7 +9,7 @@ import (
 func TestIsExit(t *testing.T) {
 	var isExit bool
 
-	queryDNSExitList = func(_ context.Context, _ string, _ string, _ uint16) ([]string, error) {
+	queryDNSExitList = func(_ context.Context, _ string) ([]string, error) {
 		if isExit {
 			return []string{"127.0.0.2"}, nil
 		}

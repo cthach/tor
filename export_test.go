@@ -1,6 +1,6 @@
 package tor
 
 var (
-	IsIP    = isIP
-	Reverse = reverse
+	IsIPv4    = isIPv4
+	ReverseIP = reverseIP
 )
