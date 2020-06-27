@@ -3,12 +3,13 @@
 Go package for interfacing with the Tor network. 
 
 This is a WIP project in *active development* with more features to come. The `master` branch is considered experimental 
-and is subject to change. No stable releases have been made so far.
+and is subject to change. No releases have been made so far.
 
 ## Features
-- Exit node lookup using the offical [Tor Project DNSEL](https://lists.torproject.org/pipermail/tor-project/2020-March/002759.html) service
+- Tiny as possible
 - No imported third-party dependencies
 - Apache 2.0 license
+- Exit node lookup via the offical [Tor Project DNSEL](https://lists.torproject.org/pipermail/tor-project/2020-March/002759.html) service
 
 ## API
 
@@ -19,22 +20,26 @@ TODO: GoDoc
 IsExit(ctx context.Context, ip string) (bool, error)
 ```
 
-## CLI Tools
+## CLI
 ### check-exit
+#### Compile
+```
+$ make build/check-exit
+```
 
-
+#### Run
 Check whether an IP address is a known exit node with `check-exit $IP_ADDR`.
 
 Is a known exit node:
 ```
-$ go run cmd/check-exit/main.go 185.220.101.204
+$ ./check-exit 185.220.101.204
 
 PASS! 185.220.101.204 IS a known exit node
 ```
 
 Is not a known exit node:
 ```
-$ go run cmd/check-exit/main.go 1.2.3.4
+$ ./check-exit 1.2.3.4
 
 FAIL! 1.2.3.4 IS NOT a known exit node
 ```
