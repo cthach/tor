@@ -7,7 +7,7 @@ lint:
 	golangci-lint run --config ./.golangci.yml
 
 test:
-	go test .
+	go test -v .
 
 build/check-exit:
 	go build -o ./build/check-exit ./cmd/check-exit
