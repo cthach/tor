@@ -47,3 +47,9 @@ FAIL! 1.2.3.4 IS NOT a known exit node
 ## Contact
 
 If you like to say hello, send me a message at [https://chris-thach.com](https://chris-thach.com).
+
+## Donate
+
+Pizza and beer donations are welcome :)
+
+Monero (XMR): 86cca4kdGxpgEuLANchRekeGwDeuyb4KmUAhfC5fyVWsBtrxjkncLbTWqXVVmHtnnUVHJPer1swssHrihDrsnrfn16QRzMS
