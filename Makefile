@@ -10,6 +10,6 @@ test:
 	go test -v .
 
 build/check-exit:
-	go build -o ./build/check-exit ./cmd/check-exit
+	go build -ldflags="-s -w" -o ./build/check-exit ./cmd/check-exit
 
 build: build/check-exit
